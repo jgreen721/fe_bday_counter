@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap");
+html {
+  font-size: 62.5%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --purple: hsl(259, 100%, 65%);
+  --lightred: hsl(0, 100%, 67%);
+  --white: hsl(0, 0%, 94%);
+  --offwhite: hsl(0, 0%, 100%);
+  --lightgray: hsl(0, 0, 86%);
+  --smokegray: hsl(0, 1%, 44%);
+  --offblack: hsl(0, 0%, 8%);
+  --mainFont: "Poppins", sans-serif;
+}
+
+.app[data-theme="light"] {
+  --primarybg: var(--offwhite);
+  --cardbg: var(--white);
+  --btnhover: var(--offblack);
+  --maintext: var(--offblack);
+  --strokecolor: var(--white);
+}
+
+.app[data-theme="dark"] {
+  --primarybg: var(--offblack);
+  --cardbg: var(--smokegray);
+  --btnhover: var(--white);
+  --strokecolor: var(--offblack);
+  --maintext: var(--offwhite);
+}
+
+.app {
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 100vh;
+  border: 2px solid black;
+  background: var(--primarybg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mainFont);
+  background: black;
+}
+
+.bg-svg-div {
+  position: absolute;
+  right: -60%;
+  transform: rotate(90deg);
+  width: 100%;
+}
+
+.birthday-card {
+  position: absolute;
+  top: 25rem;
+  background: white;
+  box-shadow: 12px 14px 15px rgba(0, 0, 0, 0.7);
+  /* width: 300px; */
+  background: radial-gradient(var(--purple), gray);
+  height: 200px;
+  padding: 2rem;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: var(--white);
+  font-size: 3rem;
+  border-bottom-right-radius: 45px;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 1px black, 4px 3px 25px black;
+  transition: 1s ease;
+  transform: translateY(0rem) rotate(0deg);
+  animation: float 10s infinite;
+  opacity: 95%;
+}
+
+.hide-birthday {
+  transform: translateY(5rem) rotate(180deg);
+  opacity: 0;
+  z-index: -1;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(-3rem);
+  }
+
+  50% {
+    transform: translateY(3rem);
+  }
+
+  100% {
+    transform: translateY(-3rem);
+  }
+}
+
+.container {
+  background: var(--cardbg);
+  border-radius: 24px;
+  border-bottom-right-radius: 200px;
+  padding: 5.6rem;
+  width: 84rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.svg-container {
+  position: absolute;
+  width: 200%;
+  bottom: -50%;
+  left: -50%;
+  opacity: 35%;
+  filter: blur(2px);
+}
+
+label {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.35rem;
+  line-height: 4.8rem;
+  padding: 0 2rem;
+  text-align: start;
+  margin-left: -1.5rem;
+  color: var(--maintext);
+}
+
+.form-input {
+  font-size: 3.2rem;
+}
+
+h1 {
+  font-size: 10.4rem;
+  line-height: 110%;
+}
+
+/*Form */
+
+.age-form {
+  width: 100%;
+  position: relative;
+  z-index: 5;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 75%;
+}
+
+.form-btn-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  border-bottom: 2px solid var(--offblack);
+  transform: translateY(-9rem);
+}
+
+.form-div {
+  position: relative;
+  z-index: 20;
+}
+
+.form-control {
+  padding: 1.2rem 2.4rem;
+  width: 100%;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.form-control:focus {
+  border: 2px solid var(--purple);
+}
+
+.error {
+  margin: 1rem;
+  font-size: 1.4rem;
+  color: var(--lightred);
+  width: auto;
+  transition: 0.5s ease;
+  transform: rotateY(0deg);
+}
+
+.hide-error {
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 1s 1s;
+  transform: rotateY(1080deg);
+}
+
+/* Btn */
+
+.btn {
+  height: 9.6rem;
+  width: 9.6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--purple);
+  border: none;
+  transition: 0.3s ease;
+  transform: translateY(4.8rem);
+  overflow: hidden;
+}
+
+.btn:hover {
+  transform: scale(99%) translateY(4.8rem);
+  background: var(--btnhover);
+  box-shadow: 20px 13px 35px var(--btnhover), 7px 5px 22px var(--purple),
+    inset 2px 1px 5px var(--purple);
+}
+
+/* Btn Details */
+
+.small-circle {
+  width: 6rem;
+  height: 5rem;
+  border-radius: 50%;
+  position: relative;
+}
+
+svg {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  fill: var(--purple);
+  background: var(--purple);
+  transition: 0.3s ease;
+}
+
+.btn:hover svg {
+  fill: var(--btnhover);
+  background: var(--btnhover);
+}
+
+circle,
+line {
+  stroke-width: 2px;
+  stroke: var(--strokecolor);
+  stroke-dashoffset: 125;
+  stroke-dasharray: 125;
+  animation: 4s draw_svg forwards;
+}
+
+line {
+  animation: 4s 2s draw_svg forwards;
+}
+
+@keyframes draw_svg {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Age Output */
+
+.output-section-content {
+  width: fit-content;
+  padding-top: 1rem;
+  position: relative;
+  z-index: 5;
+}
+
+.output-div {
+  display: flex;
+}
+
+.output-h1 {
+  color: var(--purple);
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 850px) {
+  .app {
+    padding: 2rem 2rem;
+  }
+
+  .container {
+    width: 100%;
+    padding: 5.6rem 2.2rem;
+  }
+
+  .form-row {
+    width: 100%;
+    gap: 1rem;
+    padding: 3rem 0;
+  }
+
+  .form-div {
+    width: auto;
+    max-width: none;
+  }
+
+  .form-input {
+    font-size: 2.4rem;
+  }
+
+  .form-btn-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    /* transform: translateY(-4rem); */
+  }
+
+  .output-section-content {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .app {
+    padding: 2rem 1rem;
+  }
+
+  .age-form {
+    gap: 0.5rem;
+  }
+
+  .form-input {
+    font-size: 2rem;
+  }
+
+  .form-control {
+    padding: 1.2rem 1.6rem;
+  }
+
+  .error {
+    font-size: 1rem;
+  }
+
+  .btn {
+    height: 6.4rem;
+    width: 6.4rem;
+  }
+
+  .small-circle {
+    height: 4rem;
+    width: 3rem;
+    overflow: hidden;
+  }
+
+  svg {
+    display: none;
+  }
+
+  .line {
+    height: 100%;
+    width: 2px;
+    background: var(--white);
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .line::before {
+    content: "";
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -1rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .line::after {
+    content: "";
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -1rem;
+    width: 2rem;
+    height: 2rem;
+    left: -2rem;
+  }
+
+  h1 {
+    font-size: 7rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: 5rem;
+  }
+}
