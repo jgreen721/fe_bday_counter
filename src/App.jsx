@@ -11,7 +11,7 @@ function App() {
   const [days,setDays] = useState("- -")
   const [errors,setErrors] = useState([false,false,false])
   const formRef = useRef()
-  const [showConfetti,setShowConfetti] = useState(true)
+  const [showConfetti,setShowConfetti] = useState(false)
 
   const handleFormSubmit=(e)=>{
     e.preventDefault();
@@ -74,15 +74,16 @@ function App() {
 
   return (
     <div data-theme="light" className="app">
-     
-      {showConfetti &&
-      <>
-      <HappyBirthday isBirthday={showConfetti}/>
+           {/* <HappyBirthday years={years} isBirthday={showConfetti}/> */}
+
+      {/* {showConfetti &&
+      <> */}
+      <HappyBirthday years={years} isBirthday={showConfetti}/>
           <Confetti
       width={innerWidth}
       height={innerHeight}
     />
-    </>}
+    {/* </>} */}
 
         <main className="container">
           <form ref={formRef}  className="age-form">
