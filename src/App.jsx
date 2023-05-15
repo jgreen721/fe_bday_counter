@@ -74,16 +74,17 @@ function App() {
 
   return (
     <div data-theme="light" className="app">
-           {/* <HappyBirthday years={years} isBirthday={showConfetti}/> */}
 
-      {/* {showConfetti &&
-      <> */}
+       {showConfetti &&
+      <>
       <HappyBirthday years={years} isBirthday={showConfetti}/>
           <Confetti
       width={innerWidth}
       height={innerHeight}
     />
-    {/* </>} */}
+    </>
+       }
+   
 
         <main className="container">
           <form ref={formRef}  className="age-form">
